@@ -24,6 +24,8 @@ export type Night = {
   rows: DigestRow[];
   /** Lines that did not parse as a run line. Counted, never thrown. */
   badLines: number;
+  /** Lines per status, over the whole night (the board shows these beside each night). */
+  counts: Record<RunStatus, number>;
 };
 
 /** Reads `<runsDir>/<night>.jsonl`. Returns null when there is no file for that night. */
